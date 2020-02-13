@@ -42,6 +42,7 @@ Start-Service -Name $Service
 $ServiceStatus = Get-Service $Service | Select-Object Status -ExpandProperty Status
 $Count = 0
 While ($Count -ne 60) {
+    $ServiceStatus = Get-Service $Service | Select-Object Status -ExpandProperty Status
 	if ( $ServiceStatus -eq "Running" ) {
         Write-Host "Service has been started"
 	    break
