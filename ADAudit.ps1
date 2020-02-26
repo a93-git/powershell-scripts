@@ -1,4 +1,4 @@
-# Get the 
+# Get the AD user details for all the users and export the data to a csv file
 
 
 Get-ADUser -Filter * | Select-Object SamAccountName | Out-File ".\users.txt"
